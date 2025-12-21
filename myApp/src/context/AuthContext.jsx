@@ -19,7 +19,7 @@ useEffect(()=>{
 const loginUser=async(email,password)=>{
     console.log("email",email,"password",password)
     try{
-        const res=await axios.post("http://localhost:3000/auth/login",{
+        const res=await axios.post("https://inventory-management-system-backend-qi6b.onrender.com/auth/login",{
             email,
             password
         })

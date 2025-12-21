@@ -183,7 +183,8 @@ const Products = () => {
   const navigate = useNavigate();
 
   async function fetchProducts() {
-    let url = "http://localhost:3000/products?";
+  
+    let url = "https://inventory-management-system-backend-qi6b.onrender.com/products?";
 
     if (search) url += `search=${search}&`;
     if (category && category !== "all") url += `category=${category}&`;

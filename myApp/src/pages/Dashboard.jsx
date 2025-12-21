@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   async function handleProductStats() {
     try {
-      const res = await axios.get(`http://localhost:3000/products/stats`);
+      const res = await axios.get(`https://inventory-management-system-backend-qi6b.onrender.com/products/stats`);
       setProductStats(res.data);
       setLoading(false);
       console.log(res.data);

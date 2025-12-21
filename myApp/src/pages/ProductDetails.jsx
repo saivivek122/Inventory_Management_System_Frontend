@@ -110,7 +110,7 @@ const ProductDetails = () => {
 
   async function handleSingleProduct() {
     try {
-      let res = await axios.get(`http://localhost:3000/products/${id}`);
+      let res = await axios.get(` https://inventory-management-system-backend-qi6b.onrender.com/products/${id}`);
       setProduct(res.data);
       setLoading(false);
     } catch (error) {
@@ -124,7 +124,7 @@ const ProductDetails = () => {
 
   async function handleDelete() {
     try {
-      let res = await axios.delete(`http://localhost:3000/products/${id}`);
+      let res = await axios.delete(` https://inventory-management-system-backend-qi6b.onrender.com/products/${id}`);
       setMessage(res.data.message);
       navigate("/products");
     } catch (error) {

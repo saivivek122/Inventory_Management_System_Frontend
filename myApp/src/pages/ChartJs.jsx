@@ -8,7 +8,7 @@ const ChartJs = () => {
   
   async function handleFetchProducts(){
     try{
-      const res=await axios.get("http://localhost:3000/products");
+      const res=await axios.get("https://inventory-management-system-backend-qi6b.onrender.com/products");
       setProducts(res.data.products);
       console.log("From chart",res.data.products)
       setLoading(false)

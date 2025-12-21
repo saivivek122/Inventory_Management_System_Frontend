@@ -18,7 +18,7 @@ const EditProduct = () => {
   
   async function handleSingleProduct(){
     try{
-      let res=await axios.get(`http://localhost:3000/products/${id}`);
+      let res=await axios.get(`https://inventory-management-system-backend-qi6b.onrender.com/products/${id}`);
       let product=res.data;
       setName(product.name);
       setPrice(product.price)

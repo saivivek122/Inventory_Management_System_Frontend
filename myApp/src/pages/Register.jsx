@@ -11,7 +11,7 @@ const Register = () => {
   async function handleRegister(e){
     e.preventDefault()
     try{
-        const res=await axios.post("http://localhost:3000/auth/register",{
+        const res=await axios.post("https://inventory-management-system-backend-qi6b.onrender.com/auth/register",{
           name: registerDetails.name,
            email: registerDetails.email,
            password:registerDetails.password

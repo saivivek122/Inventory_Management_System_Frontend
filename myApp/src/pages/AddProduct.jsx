@@ -20,7 +20,7 @@ const AddProduct = () => {
       return
     }
     try {
-      let res = await axios.post(`http://localhost:3000/products`, {
+      let res = await axios.post(`https://inventory-management-system-backend-qi6b.onrender.com/products`, {
         name: name,
         price: price,
         stock: stock,

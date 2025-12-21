@@ -7,7 +7,7 @@ const LowStock = () => {
 
  async function handleLowStockProducts(){
   try{
-    let res=await axios.get(`http://localhost:3000/products/low-stock`);
+    let res=await axios.get(` https://inventory-management-system-backend-qi6b.onrender.com/products/low-stock`);
     console.log(res.data)
     setProducts(res.data)
     setLoading(false)
