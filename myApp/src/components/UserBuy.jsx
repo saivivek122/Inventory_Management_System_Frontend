@@ -121,7 +121,8 @@ export default function UserBuy() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const res = await fetch("http://localhost:3000/products");
+ 
+      const res = await fetch("https://inventory-management-system-backend-qi6b.onrender.com/products");
       const data = await res.json();
       setProducts(data.products);
       setLoading(false);
