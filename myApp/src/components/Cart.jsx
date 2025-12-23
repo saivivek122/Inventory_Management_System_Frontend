@@ -1,32 +1,3 @@
-// import { useCart } from "../context/CartContext";
-// import { Button } from "@mui/material";
-
-// const Cart = () => {
-//   const { cartItems, removeFromCart } = useCart();
-
-//   if (cartItems.length === 0) {
-//     return <p>Your cart is empty</p>;
-//   }
-
-//   return (
-//     <div className="cart">
-//       <h2 className="cart-text">Your Cart</h2>
-//     <div className="cart-box">
-      
-//       {cartItems.map(item => (
-//         <div className="cart-items" key={item._id}>
-//           <p>{item.name} - ₹{item.price}</p>
-//           <button onClick={() => removeFromCart(item._id)}>
-//             Remove
-//           </button>
-//         </div>
-//       ))}
-//     </div>
-//     </div>
-//   );
-// };
-
-// export default Cart;
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import {
