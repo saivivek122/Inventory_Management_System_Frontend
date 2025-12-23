@@ -58,7 +58,7 @@ const EditProduct = () => {
       return
     }
     try{
-      let res=await axios.put(`http://localhost:3000/products/${id}`,{
+      let res=await axios.put(`https://inventory-management-system-backend-qi6b.onrender.com/products/${id}`,{
         name:name,
         price:Number(price),
         stock:Number(stock),
