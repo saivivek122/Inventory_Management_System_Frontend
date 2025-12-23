@@ -6,6 +6,7 @@ import loginLogo from "../assets/Login.jpg"
 const Login = () => {
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
+  const [loading,setLoading]=useState(false)
   const[error,setError]=useState("");
   const navigate=useNavigate();
   const {loginUser,user}=useAuth()
@@ -15,6 +16,7 @@ const Login = () => {
     
 
     try{
+      setLoading(true)
       const success=await loginUser(email,password);
       console.log(success)
       if(success){
@@ -32,6 +34,9 @@ const Login = () => {
     }
     catch(error){
       setError("Invalid Email Or Password")
+    }
+    finally{
+      setLoading(false)
     }
   }
   return (
@@ -57,10 +62,10 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="login-button" type="submit">Login</button>       
+        <button className="login-button" type="submit">{loading ?"Loading...":"Login"}</button>       
       </form>
        <p>Don't have an account ? <Link to="/register">Click Here</Link></p>
-     {/* <img src={loginLogo} className="login-logo"/> */}
+     <img src={loginLogo} className="login-logo"/>
      
 
     </div>

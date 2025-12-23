@@ -8,8 +8,10 @@ const Register = () => {
     password: "",
   });
   const [message,setMessage]=useState("")
+  const [loading,setLoading]=useState(false)
   async function handleRegister(e){
     e.preventDefault()
+    setLoading(true)
     try{
         const res=await axios.post("https://inventory-management-system-backend-qi6b.onrender.com/auth/register",{
           name: registerDetails.name,
@@ -23,6 +25,9 @@ const Register = () => {
     catch(error){
         console.log(error)
         setMessage(error.response.data)
+    }
+    finally{
+      setLoading(false)
     }
 
   }
@@ -57,7 +62,7 @@ const Register = () => {
           placeholder="Enter Your Password"
         />
     
-        <button type="submit" className="register-button">Register</button>
+        <button type="submit" className="register-button">{loading ?"Loading...":"Register"}</button>
       </form>
       <p className="already-have-an-account-text">Already have an account?<Link to="/login">Click here</Link></p>
     </div>

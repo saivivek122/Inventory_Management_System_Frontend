@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Login from "./pages/Login";
 import AddProduct from "./pages/AddProduct";
 import Dashboard from "./pages/Dashboard";
@@ -15,9 +15,14 @@ import Cart from "./components/Cart";
 import Register from "./pages/Register";
 
 const App = () => {
+    const location = useLocation();
+     const hideNavbar =
+    location.pathname === "/user" ||
+    location.pathname === "/cart";
   return (
     <div>
-      <NavBar/>
+       {!hideNavbar && <NavBar />}
+      {/* <NavBar/> */}
       <Routes>
         
         <Route path="/login" element={<Login />} />
